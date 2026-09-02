@@ -1,0 +1,207 @@
+Delivered-To: spencersouthern12@gmail.com
+Received: by 2002:a05:6f02:c25a:b0:120:5f68:37ac with SMTP id n26csp3104823rcb;
+        Wed, 20 May 2026 10:58:58 -0700 (PDT)
+X-Received: by 2002:a05:6a00:1902:b0:834:ea1a:4b25 with SMTP id d2e1a72fcca58-83f33b2e0c9mr27742029b3a.12.1779299937741;
+        Wed, 20 May 2026 10:58:57 -0700 (PDT)
+Return-Path: <>
+Received: from accc-mail02.sge.net (accc-mail02.sge.net. [152.91.27.119])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-83f1962c55bsi38743693b3a.67.2026.05.20.10.58.56
+        for <spencersouthern12@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 20 May 2026 10:58:57 -0700 (PDT)
+Received-SPF: none (google.com: postmaster@accc-mail02.sge.net does not designate permitted sender hosts) client-ip=152.91.27.119;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accc.gov.au header.s=vzp1 header.b=ayQi322Z;
+       arc=fail (signature failed);
+       spf=none (google.com: postmaster@accc-mail02.sge.net does not designate permitted sender hosts) smtp.helo=accc-mail02.sge.net;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accc.gov.au
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=accc.gov.au; i=@accc.gov.au; q=dns/txt; s=vzp1;
+  t=1779299937; x=1810835937;
+  h=from:to:subject:date:message-id:references:in-reply-to:
+   mime-version;
+  bh=a3q5yHJG6+SJS78hA6yFMBpn0HTmZziNRD6Bn4Zk+B0=;
+  b=ayQi322Z8rcOnhuYct4AnBZNUCVoXNVmrmE6s3BVf8Ekbtmx153T43A1
+   p06HNT+O4nTMhY1FAaZdJmObTRhSXC72MgpdaQNgguHwx50+4OIaHP5OY
+   RiQJDRPgOooAjvfM/UwANbcxNgEE8M/XSQOsLd9c8Ug3+wPcEQmbsgv1s
+   N951GFsZC3u4cYwqtniaWpq0H6sU6Tz3yfCZh6reJ2CEip2xsWMNm1Rad
+   xsf1b1uUKloNDE+FWb3IZ1+ET8HmCVQsHP2DPFgxEASzC+aBGwrGvPvfr
+   h9O3e4ZR1Dz11iDU8RC1Pgw26CvlEQTKwqVuQeiBBP1u86IUSLCnDCW3t
+   A==;
+X-CSE-ConnectionGUID: /OMx7X4CRjWKJqtxgwNSgA==
+X-CSE-MsgGUID: yeei0EbMT5mrRSLBNvW4+w==
+Authentication-Results: accc-mail02.sge.net; spf=Pass smtp.mailfrom=postmaster@SY2PR01CU004.outbound.protection.outlook.com; spf=Pass smtp.helo=postmaster@SY2PR01CU004.outbound.protection.outlook.com
+Received-SPF: Pass (accc-mail02.sge.net: domain of
+  postmaster@SY2PR01CU004.outbound.protection.outlook.com
+  designates 52.102.200.20 as permitted sender)
+  identity=mailfrom; client-ip=52.102.200.20;
+  receiver=accc-mail02.sge.net; envelope-from="";
+  x-sender="postmaster@SY2PR01CU004.outbound.protection.outlook.com";
+  x-conformance=spf_only; x-record-type="v=spf1";
+  x-record-text="v=spf1 ip4:40.92.0.0/15 ip4:40.107.0.0/16
+  ip4:52.100.0.0/15 ip4:52.102.0.0/16 ip4:52.103.0.0/17
+  ip4:104.47.0.0/17 ip6:2a01:111:f400::/48
+  ip6:2a01:111:f403::/49 ip6:2a01:111:f403:8000::/51
+  ip6:2a01:111:f403:c000::/51 ip6:2a01:111:f403:f000::/52 -all"
+Received-SPF: Pass (accc-mail02.sge.net: domain of
+  postmaster@SY2PR01CU004.outbound.protection.outlook.com
+  designates 52.102.200.20 as permitted sender) identity=helo;
+  client-ip=52.102.200.20; receiver=accc-mail02.sge.net;
+  envelope-from="";
+  x-sender="postmaster@SY2PR01CU004.outbound.protection.outlook.com";
+  x-conformance=spf_only; x-record-type="v=spf1";
+  x-record-text="v=spf1 ip4:40.92.0.0/15 ip4:40.107.0.0/16
+  ip4:52.100.0.0/15 ip4:52.102.0.0/16 ip4:52.103.0.0/17
+  ip4:104.47.0.0/17 ip6:2a01:111:f400::/48
+  ip6:2a01:111:f403::/49 ip6:2a01:111:f403:8000::/51
+  ip6:2a01:111:f403:c000::/51 ip6:2a01:111:f403:f000::/52 -all"
+X-IronPort-AV: E=McAfee;i="6800,10657,11792"; a="19986851"
+X-IronPort-AV: E=Sophos;i="6.23,244,1770595200"; 
+   d="scan'208,217";a="19986851"
+Received: from mail-australiaeastazhn15011020.outbound.protection.outlook.com (HELO SY2PR01CU004.outbound.protection.outlook.com) ([52.102.200.20])
+  by accc-mail02.sge.net with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 May 2026 17:58:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=AF+Zfx84448uFJW6HN+AzDUIOr0br7lI1scI9QBXF68REGY6wVNAQTj8ppbwraJ+eepiouG/h00b8djXrpTMr6DoD4KxDfJ4eM9s1oKYuhbGq9hgoV0872hU+t7mjBwXFa6Kf/WZdbONzLNguWwhs6F9nOWBWAko4giZ+3fIAFfXpg/wCw1P5lhEE8z9cvPUq7YRZsMvHsSrnODDJcN7WwrWg8b9WusbAjXjwW4R2GIX7VNv4OK+OKs1WYRx0S8E0+tWnrOFua6GfCbms0zfMCSPlE2xuaDt8AJxmZMTovxPlE9+jBCQvgUjxZL/OtFJXeshv7VR+8Np2mVvWnjulQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=a3q5yHJG6+SJS78hA6yFMBpn0HTmZziNRD6Bn4Zk+B0=;
+ b=BvFKpwPHDbE/Xb5A1QrE5qiD3yytyJ6I+cmM6EIEvXyUdGZj4UWG5S4NkREx6F8C9bC+uWBUS5RcGZDerpqeF4xBCP3hjW7vdLx71g/ykx8VUjUxXi1FdEIquvIBKoeVlQLXbWU4zpj+06ZQw8MvwM4tTr9TNLyeIKQA4S55OqKMigTcuQfC2vT9keEh8OjRqSandtxLXKsuNzBie6Fv5vw3UvhbBl2ee2URKTQiGBNdheAXQ8BzdnDKsx2aKIKXHnudxzBnlpkVDq+tbg0+3QVTbrVCJIdYDfg53bE4gkQg9wnxScrDDk/FVJ03vsKR29RcHjUK8Z+g2+CCwN7v2A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=pass
+ action=none header.from=accc.gov.au; dkim=pass header.d=accc.gov.au; arc=none
+Received: from SY1P282MB6125.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:31a::8) by
+ SY4P282MB1593.AUSP282.PROD.OUTLOOK.COM (2603:10c6:10:cd::7) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.48.17; Wed, 20 May 2026 17:58:52 +0000
+Received: from SY1P282MB6125.AUSP282.PROD.OUTLOOK.COM ([::1]) by
+ SY1P282MB6125.AUSP282.PROD.OUTLOOK.COM ([fe80::d00:21d9:e029:1571%3]) with
+ Microsoft SMTP Server id 15.21.0048.013; Wed, 20 May 2026 17:58:52 +0000
+From: Infocentre Public Mailbox <info.centre@accc.gov.au>
+To: Spencer Southern <spencersouthern12@gmail.com>
+Subject:
+ =?utf-8?B?QXV0b21hdGljIHJlcGx5OiBJbmRlcGVuZGVudCBDYXNlIElucXVpcnkgTk9U?=
+ =?utf-8?B?IGEgQ2xhc3MgQWN0aW9uIE9wdOKAkUlu?=
+Thread-Topic:
+ =?utf-8?B?SW5kZXBlbmRlbnQgQ2FzZSBJbnF1aXJ5IE5PVCBhIENsYXNzIEFjdGlvbiBP?=
+ =?utf-8?B?cHTigJFJbg==?=
+Thread-Index: AQHc6IJQhWdFUVMfq0ulQlsv4UTP/LYXM57x
+Date: Wed, 20 May 2026 17:58:52 +0000
+Message-ID:
+ <9eb9866fdf99465684f65c5e082e43ce@SY1P282MB6125.AUSP282.PROD.OUTLOOK.COM>
+References:
+ <CAO68uAoeLQwAOFfmWsBEAXMCfX=Gd68BA8WpxqYT6dBniZF3QA@mail.gmail.com>
+In-Reply-To:
+ <CAO68uAoeLQwAOFfmWsBEAXMCfX=Gd68BA8WpxqYT6dBniZF3QA@mail.gmail.com>
+X-MS-Has-Attach:
+X-Auto-Response-Suppress: All
+X-MS-Exchange-Inbox-Rules-Loop: info.centre@accc.gov.au
+X-MS-TNEF-Correlator:
+x-ms-exchange-parent-message-id:
+ <CAO68uAoeLQwAOFfmWsBEAXMCfX=Gd68BA8WpxqYT6dBniZF3QA@mail.gmail.com>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Mailbox Rules Agent
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SY1P282MB6125:EE_|SY4P282MB1593:EE_
+x-ms-office365-filtering-correlation-id: 81e74284-90c9-4383-8a46-08deb69973f4
+x-outbound-auth: BxTKg4fBe3Yh7sc
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|50650200027|376014|10070799003|1800799024|366016|12063799003|13003099007|6133799003|11063799006|5133699003|22082099003|56012099003|18002099003|8096899003|3613699012|80100003;
+x-microsoft-antispam-message-info:
+ MVZPzmh5qEjORcVoqqMgtx3w/oZAcrzFshT8eJiR4QEEMouXcIL/V0GfGGB1EF8ju4gjA1SfbPDi1LjK/Rp5WxRfFQPtyc33Aw2m1YQXkzjK155LJCeeqrmGDMN9R+h/4YFgSHphSJsFXLtqbIaUOP1U7fkBqQORd6cOJI1ar58rEV1sWrxaFlZLQOrn49qTBsZa+dEs7Vxc07p6AgdaJRxjyxQmqUTkguYCabYEYVzwoPQeVUVDjMhFVCdSEB1w/EkgZKCgnfiC0y1HFt3huGLgJSPhycmG+bbXZhxDOTwezr89qOnllcJ5gZjFIf6GO183NS3uH8o+uKnMi2Iv1Acq+4fTP74i9PZ3DyisIIkp+DwqpgAfL0VySqJjnv4NpiDBC3RWh5E/9mpVF0RBXFrA3QiXL/VpEurOjAvM69U0Qfu4dpMJN/cVG5chapNrpjHUOIokDOX4H4MbIklg+wvb3OMKksOIF9r9uQ437MoZuqHYDwZQGGvbQo62MJ4e7kTRwQVHiBMX8SaVGHB4xYb97T2IvGmrMhfZ2nukxSC5Lb/tk9xbS2CQkxGliA52ZZMQfFJeaCsOmOsNakWcg9F7zwcruCtFv43v9LBBhbqpMt6W1KV7BJZF9ArqRnSyYUNymvSO8mHmGVqgAJfenQhHOMUVOAUo5gKNYLrQA1xvL7bFNVxzEjqCB8DIQn1cA0oGn7YRdO4gq0hVMxL+7A==
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SY1P282MB6125.AUSP282.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(50650200027)(376014)(10070799003)(1800799024)(366016)(12063799003)(13003099007)(6133799003)(11063799006)(5133699003)(22082099003)(56012099003)(18002099003)(8096899003)(3613699012)(80100003);DIR:OUT;SFP:1501;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ 5R8Ay9OJylZiNPKtJVbwAU3SKlo6yH7LboNDCm4cv+JWksuarghKsWGd7ycH4n2LVqjIEtTrb34wU2IfYr41XdZTi4T6sPoF0z3z7jJm3edASm9qWkTuFf2GY5aBOQrtlIHZuQjUQhUukDEQDRx7dwu9lG4fiF3q258iLDiT+5N0bTFFNg4dsMM9QGnXsLV8x322QIGTDl7flDTgeqeM3WJ6JliobQktgS+dahl3bCtoRv/USRXxLvHW2ZndE/WcHqIB2UM/oYQ5gPIoN0Sxfa5E9fKK3Z0zzVlNZvxGqLg+87kqtfeqw0+i32U2pCyi5FVcSFBFmsrxAa+dNxDkQBqwhBwRYWzk2f9V/RPseEF4m/H8ersoYVjazdgDTJno23CKKUrYFMY6tuZ7Xyssm2k907vjz9Zxxfcf9XcwrMdPxW8qR166CnE3CAF4dsVU
+Content-Type: multipart/alternative;
+	boundary="_000_9eb9866fdf99465684f65c5e082e43ceSY1P282MB6125AUSP282PRO_"
+MIME-Version: 1.0
+X-Exchange-RoutingPolicyChecked:
+	qVL1aKMsMFvYoIs4D+cRy8DKx5n0EIVWys1/wkddNl69RglmIVZwu6CMHOztaW63ksJ36X1JtiFFNp8QIkMsAmgW0SzDSK1LIx6gY64a1veXnshVWHsxR00Oi+0u0cODlt8K3Y0bPcNP4WyX0J4Fx+m0CWhn0cp6mSfAvZwKGPv5/sZXumsFwskFlFKrWJKE21g1HCIp8qGMaCHpvEpzPXJ2navP0//2vrORsw5yjeFEG41GalCLEXdDA0iNvVz7PATmFHt7zzbVLXEuK2xOiU91Z/g8FknyM3BpcN3siG5I1NIqxq54tmcgEgscaK0bFNKNk5jZM5xk/NIJcRCYBg==
+X-OriginatorOrg: accc.gov.au
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SY1P282MB6125.AUSP282.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 81e74284-90c9-4383-8a46-08deb69973f4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2026 17:58:52.4723
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b33e9e1a-e443-4edd-9789-24bed26d38d6
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SY4P282MB1593
+
+--_000_9eb9866fdf99465684f65c5e082e43ceSY1P282MB6125AUSP282PRO_
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+
+VGhhbmsgeW91IGZvciB5b3VyIHJlcG9ydC4gV2UgYXBwcmVjaWF0ZSB5b3UgdGFraW5nIHRoZSB0
+aW1lIHRvIHdyaXRlIHRvIHVzLg0KDQpSZXNwb25zZXMgd2lsbCB1c3VhbGx5IGJlIHByb3ZpZGVk
+IHdpdGhpbiAxNSBidXNpbmVzcyBkYXlzLg0KDQpXZSB3aWxsIHJlc3BvbmQgdG8geW91IHdoZXJl
+IHdlIGhhdmUgaW5mb3JtYXRpb24gdGhhdCBtYXkgaGVscCB5b3UsIG9yIHlvdSBoYXZlIGFza2Vk
+IGEgcXVlc3Rpb24gYWJvdXQgeW91ciByaWdodHMgb3Igb2JsaWdhdGlvbnMgdW5kZXIgdGhlIGxh
+dy4gSWYgdGhpcyBpcyBub3QgdGhlIGNhc2UsIHlvdSBtYXkgbm90IHJlY2VpdmUgYSByZXNwb25z
+ZS4NCg0KT3VyIHdlYnNpdGUgcHJvdmlkZXMgaW5mb3JtYXRpb24gYWJvdXQgeW91ciByaWdodHMg
+YXMgYSBjb25zdW1lciBhbmQgaG93IHRvIHJlc29sdmUgYSBkaXNwdXRlIGFib3V0IGEgcHJvZHVj
+dCBvciBzZXJ2aWNlLiBTZWU6IHd3dy5hY2NjLmdvdi5hdS9jb25zdW1lcnM8aHR0cHM6Ly93d3cu
+YWNjYy5nb3YuYXUvY29uc3VtZXJzPg0KDQpZb3UgY2FuIGFsc28gc2VlIG91ciB3ZWJzaXRlIGZv
+ciBpbmZvcm1hdGlvbiBhYm91dCB3aGF0IHdlIGNhbiBhbmQgY2FuJ3QgZG8gZm9yIGNvbnN1bWVy
+czxodHRwczovL3d3dy5hY2NjLmdvdi5hdS9hYm91dC11cy9hdXN0cmFsaWFuLWNvbXBldGl0aW9u
+LWNvbnN1bWVyLWNvbW1pc3Npb24vc2VydmljZS1jaGFydGVyL3doYXQtd2UtY2FuLWNhbnQtZG8t
+Zm9yLWNvbnN1bWVycz4gYW5kIHRoZSB0eXBlcyBvZiBtYXR0ZXJzIHdlIHByaW9yaXRpc2U8aHR0
+cHM6Ly93d3cuYWNjYy5nb3YuYXUvYWJvdXQtdXMvYXVzdHJhbGlhbi1jb21wZXRpdGlvbi1jb25z
+dW1lci1jb21taXNzaW9uL2NvbXBsaWFuY2UtZW5mb3JjZW1lbnQtcG9saWN5LXByaW9yaXRpZXM+
+Lg0KLS0tDQoNCklNUE9SVEFOVDogVGhpcyBlbWFpbCBmcm9tIHRoZSBBdXN0cmFsaWFuIENvbXBl
+dGl0aW9uIGFuZCBDb25zdW1lciBDb21taXNzaW9uIChBQ0NDKSwgYW5kIGFueSBhdHRhY2htZW50
+cyB0byBpdCwgbWF5IGNvbnRhaW4gaW5mb3JtYXRpb24gdGhhdCBpcyBjb25maWRlbnRpYWwgYW5k
+IG1heSBhbHNvIGJlIHRoZSBzdWJqZWN0IG9mIGxlZ2FsLCBwcm9mZXNzaW9uYWwgb3Igb3RoZXIg
+cHJpdmlsZWdlLiBJZiB5b3UgYXJlIG5vdCB0aGUgaW50ZW5kZWQgcmVjaXBpZW50LCB5b3UgbXVz
+dCBub3QgcmV2aWV3LCBjb3B5LCBkaXNzZW1pbmF0ZSwgZGlzY2xvc2UgdG8gb3RoZXJzIG9yIHRh
+a2UgYWN0aW9uIGluIHJlbGlhbmNlIG9uLCBhbnkgbWF0ZXJpYWwgY29udGFpbmVkIHdpdGhpbiB0
+aGlzIGVtYWlsLiBJZiB5b3UgaGF2ZSByZWNlaXZlZCB0aGlzIGVtYWlsIGluIGVycm9yLCBwbGVh
+c2UgbGV0IHRoZSBBQ0NDIGtub3cgYnkgcmVwbHkgZW1haWwgdG8gdGhlIHNlbmRlciBpbmZvcm1p
+bmcgdGhlbSBvZiB0aGUgbWlzdGFrZSBhbmQgZGVsZXRlIGFsbCBjb3BpZXMgZnJvbSB5b3VyIGNv
+bXB1dGVyIHN5c3RlbS4gRm9yIHRoZSBwdXJwb3NlcyBvZiB0aGUgU3BhbSBBY3QgMjAwMywgdGhp
+cyBlbWFpbCBpcyBhdXRob3Jpc2VkIGJ5IHRoZSBBQ0NDIHd3dy5hY2NjLmdvdi5hdQ0K
+
+--_000_9eb9866fdf99465684f65c5e082e43ceSY1P282MB6125AUSP282PRO_
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: base64
+
+PGh0bWw+DQo8aGVhZD4NCjxtZXRhIGh0dHAtZXF1aXY9IkNvbnRlbnQtVHlwZSIgY29udGVudD0i
+dGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04Ij4NCjwvaGVhZD4NCjxib2R5Pg0KPGRpdiBzdHlsZT0i
+Zm9udC1mYW1pbHk6VGFob21hOyBmb250LXNpemU6MTNweCI+VGhhbmsgeW91IGZvciB5b3VyIHJl
+cG9ydC4gV2UgYXBwcmVjaWF0ZSB5b3UgdGFraW5nIHRoZSB0aW1lIHRvIHdyaXRlIHRvIHVzLg0K
+PGRpdj48YnI+DQo8ZGl2PjwvZGl2Pg0KPGRpdj5SZXNwb25zZXMgd2lsbCB1c3VhbGx5IGJlIHBy
+b3ZpZGVkIHdpdGhpbiZuYnNwOzxiPjE1IGJ1c2luZXNzIGRheXM8L2I+LjwvZGl2Pg0KPGRpdj48
+YnI+DQo8L2Rpdj4NCjxkaXY+V2Ugd2lsbCByZXNwb25kIHRvIHlvdSB3aGVyZSB3ZSBoYXZlIGlu
+Zm9ybWF0aW9uIHRoYXQgbWF5IGhlbHAgeW91LCBvciB5b3UgaGF2ZSBhc2tlZCBhIHF1ZXN0aW9u
+IGFib3V0IHlvdXIgcmlnaHRzIG9yIG9ibGlnYXRpb25zIHVuZGVyIHRoZSBsYXcuIElmIHRoaXMg
+aXMgbm90IHRoZSBjYXNlLCB5b3UmbmJzcDs8Yj5tYXkgbm90PC9iPiZuYnNwO3JlY2VpdmUgYSBy
+ZXNwb25zZS48L2Rpdj4NCjxkaXY+PGJyPg0KPC9kaXY+DQo8ZGl2Pk91ciB3ZWJzaXRlIHByb3Zp
+ZGVzIGluZm9ybWF0aW9uIGFib3V0IHlvdXIgcmlnaHRzIGFzIGEgY29uc3VtZXIgYW5kIGhvdyB0
+byByZXNvbHZlIGEgZGlzcHV0ZSBhYm91dCBhIHByb2R1Y3Qgb3Igc2VydmljZS4gU2VlOiZuYnNw
+OzxhIGhyZWY9Imh0dHBzOi8vd3d3LmFjY2MuZ292LmF1L2NvbnN1bWVycyI+d3d3LmFjY2MuZ292
+LmF1L2NvbnN1bWVyczwvYT48L2Rpdj4NCjwvZGl2Pg0KPGRpdj48YnI+DQo8L2Rpdj4NCjxkaXY+
+WW91IGNhbiBhbHNvIHNlZSBvdXIgd2Vic2l0ZSBmb3IgaW5mb3JtYXRpb24gYWJvdXQmbmJzcDs8
+YSBocmVmPSJodHRwczovL3d3dy5hY2NjLmdvdi5hdS9hYm91dC11cy9hdXN0cmFsaWFuLWNvbXBl
+dGl0aW9uLWNvbnN1bWVyLWNvbW1pc3Npb24vc2VydmljZS1jaGFydGVyL3doYXQtd2UtY2FuLWNh
+bnQtZG8tZm9yLWNvbnN1bWVycyI+d2hhdCB3ZSBjYW4gYW5kIGNhbid0IGRvIGZvciBjb25zdW1l
+cnM8L2E+Jm5ic3A7YW5kIHRoZSZuYnNwOzxhIGhyZWY9Imh0dHBzOi8vd3d3LmFjY2MuZ292LmF1
+L2Fib3V0LXVzL2F1c3RyYWxpYW4tY29tcGV0aXRpb24tY29uc3VtZXItY29tbWlzc2lvbi9jb21w
+bGlhbmNlLWVuZm9yY2VtZW50LXBvbGljeS1wcmlvcml0aWVzIj50eXBlcw0KIG9mIG1hdHRlcnMg
+d2UgcHJpb3JpdGlzZTwvYT4uPC9kaXY+DQo8ZGl2IHN0eWxlPSJmb250LWZhbWlseTpUYWhvbWE7
+IGZvbnQtc2l6ZToxM3B4Ij48L2Rpdj4NCjwvZGl2Pg0KLS0tPGJyPg0KPHA+SU1QT1JUQU5UOiBU
+aGlzIGVtYWlsIGZyb20gdGhlIEF1c3RyYWxpYW4gQ29tcGV0aXRpb24gYW5kIENvbnN1bWVyIENv
+bW1pc3Npb24gKEFDQ0MpLCBhbmQgYW55IGF0dGFjaG1lbnRzIHRvIGl0LCBtYXkgY29udGFpbiBp
+bmZvcm1hdGlvbiB0aGF0IGlzIGNvbmZpZGVudGlhbCBhbmQgbWF5IGFsc28gYmUgdGhlIHN1Ympl
+Y3Qgb2YgbGVnYWwsIHByb2Zlc3Npb25hbCBvciBvdGhlciBwcml2aWxlZ2UuIElmIHlvdSBhcmUg
+bm90IHRoZSBpbnRlbmRlZA0KIHJlY2lwaWVudCwgeW91IG11c3Qgbm90IHJldmlldywgY29weSwg
+ZGlzc2VtaW5hdGUsIGRpc2Nsb3NlIHRvIG90aGVycyBvciB0YWtlIGFjdGlvbiBpbiByZWxpYW5j
+ZSBvbiwgYW55IG1hdGVyaWFsIGNvbnRhaW5lZCB3aXRoaW4gdGhpcyBlbWFpbC4gSWYgeW91IGhh
+dmUgcmVjZWl2ZWQgdGhpcyBlbWFpbCBpbiBlcnJvciwgcGxlYXNlIGxldCB0aGUgQUNDQyBrbm93
+IGJ5IHJlcGx5IGVtYWlsIHRvIHRoZSBzZW5kZXIgaW5mb3JtaW5nIHRoZW0gb2YNCiB0aGUgbWlz
+dGFrZSBhbmQgZGVsZXRlIGFsbCBjb3BpZXMgZnJvbSB5b3VyIGNvbXB1dGVyIHN5c3RlbS4gRm9y
+IHRoZSBwdXJwb3NlcyBvZiB0aGUgU3BhbSBBY3QgMjAwMywgdGhpcyBlbWFpbCBpcyBhdXRob3Jp
+c2VkIGJ5IHRoZSBBQ0NDIHd3dy5hY2NjLmdvdi5hdTwvcD4NCjwvYm9keT4NCjwvaHRtbD4NCg==
+
+--_000_9eb9866fdf99465684f65c5e082e43ceSY1P282MB6125AUSP282PRO_--
